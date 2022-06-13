@@ -1,6 +1,6 @@
 #!/bin/bash
 
-result=$(/usr/bin/nvidia-smi -L)
+result=$(/usr/bin/nvidia-smi -L| sed -r 's/\(/\"\(/g'|sed -r 's/\)/\)\"/g')
 first=1
 
 echo "{"
